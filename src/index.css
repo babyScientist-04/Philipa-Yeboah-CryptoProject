@@ -1,0 +1,25 @@
+@import 'tailwindcss';
+
+:root{
+    --primary: #0052FF;
+  --coinbase-black: #0A0B0D;
+  --coinbase-gray-1: #DADCE0;
+  --coinbase-gray-2: #E8EAED;
+  --coinbase-gray-3: #EEF0F3;
+    --font-coinbase-regular: CoinbaseSansRegular,
+    --font-coinbase-mono:CoinbaseMonoMedium
+    
+}
+
+@font-face {
+    font-family: 'CoinbaseSansRegular';
+    src: url('./assets/WOFF2/Coinbase-Sans/Coinbase_Sans-Regular-web-1.32.woff2');
+}
+@font-face {
+    font-family: 'CoinbaseMonoMedium';
+    src: url('./assets/WOFF2/Coinbase-Mono/Coinbase_Mono-Medium-web.woff2');
+}
+body{
+    font-family: 'CoinbaseSansRegular',sans-serif;
+}
+
