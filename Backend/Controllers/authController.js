@@ -1,5 +1,5 @@
 import { validationResult } from "express-validator";
-import User from "../models/User.js";
+import User from "../models/userModel.js";
 import { generateToken, sendTokenCookie } from "../utils/tokenUtils.js";
 
 // Helper: handle validation errors
@@ -34,7 +34,7 @@ export const register = async (req, res) => {
       token,
     });
   } catch (err) {
-    res.status(500).json({ message: err.message ,"Server error" });
+    res.status(500).json({ message: "Server error" });
   }
 };
 
