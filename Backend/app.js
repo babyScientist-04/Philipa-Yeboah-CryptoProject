@@ -1,9 +1,20 @@
 import express from "express";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 import authRoutes from "./routes/authRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
+import cryptoRoutes from "./routes/cryptoRoutes.js";
 
 const app = express();
+
+app.use(cors({
+  origin:  process.env.NODE_ENV === "production" 
+  ? "https://philipayeboah-cryptoproject.netlify.app/" 
+  : "http://localhost:5173", 
+  credentials: true,               
+  methods: ["GET", "POST", "PUT", "DELETE"],
+}));
 
 
 app.use(express.json());
@@ -12,6 +23,8 @@ app.use(cookieParser());
 
 
 app.use("/api/auth", authRoutes);
+app.use("/api/crypto", cryptoRoutes);
+app.use("/api/user", userRoutes);
 
 
 app.use((req, res) => {
