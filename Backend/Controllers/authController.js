@@ -1,6 +1,6 @@
 import { validationResult } from "express-validator";
 import User from "../models/userModel.js";
-import { generateToken, sendTokenCookie } from "../utils/tokenUtils.js";
+import { generateToken, sendTokenCookie } from "../Utils/tokenUtils.js";
 
 // Helper: handle validation errors
 const handleValidation = (req, res) => {

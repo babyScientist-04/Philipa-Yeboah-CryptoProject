@@ -1,6 +1,6 @@
 import express from "express";
-import {getAllCryptos,getTopGainers,getNewListings,addCrypto,} from "../controllers/cryptoController.js";
-import { addCryptoValidation } from "../middleware/cryptoValidation.js";
+import {getAllCryptos,getTopGainers,getNewListings,addCrypto,} from "../Controllers/cryptoController.js";
+import { addCryptoValidation } from "../Middleware/cryptoValidation.js";
 
 
 
