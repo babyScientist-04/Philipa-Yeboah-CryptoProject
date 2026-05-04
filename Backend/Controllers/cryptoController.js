@@ -1,5 +1,5 @@
 import { validationResult } from "express-validator";
-import Crypto from "../models/Crypto.js";
+import Crypto from "../models/crypto.js";
 
 
 const getAllCryptos = async (req, res) => {
