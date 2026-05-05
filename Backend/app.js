@@ -8,13 +8,23 @@ import cryptoRoutes from "./Routes/cryptoRoutes.js";
 
 const app = express();
 
+const allowedOrorigins = [
+  "https://philipayeboah-cryptoproject.netlify.app/" 
+  , "http://localhost:5173"
+]
+
 app.use(cors({
-  origin:  process.env.NODE_ENV === "production" 
-  ? "https://philipayeboah-cryptoproject.netlify.app/" 
-  : "http://localhost:5173", 
-  credentials: true,               
-  methods: ["GET", "POST", "PUT", "DELETE"],
-}));
+  origin:  (origin,callback)=>{
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error(`CORS blocked: ${origin}`));
+    }
+
+  },
+  credentials:true,
+  methods: ["GET","POST","PUT", "DELETE"]
+}))
 
 
 app.use(express.json());
