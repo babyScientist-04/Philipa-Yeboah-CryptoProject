@@ -9,7 +9,7 @@ import cryptoRoutes from "./Routes/cryptoRoutes.js";
 const app = express();
 
 const allowedOrorigins = [
-  "https://philipayeboah-cryptoproject.netlify.app/" 
+  "https://philipayeboah-cryptoproject.netlify.app" 
   , "http://localhost:5173"
 ]
 
