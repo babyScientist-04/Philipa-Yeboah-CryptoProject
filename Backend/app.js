@@ -25,6 +25,9 @@ app.use(cookieParser());
 app.use("/api/auth", authRoutes);
 app.use("/api/crypto", cryptoRoutes);
 app.use("/api/user", userRoutes);
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
 
 
 app.use((req, res) => {
